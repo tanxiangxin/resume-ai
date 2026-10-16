@@ -1,0 +1,102 @@
+/* Workspace chrome is scoped so resume templates retain their own typography. */
+.app-sidebar {
+  background: hsl(var(--card));
+}
+
+.sidebar-tip {
+  background: linear-gradient(
+    145deg,
+    hsl(var(--secondary)),
+    hsl(var(--background))
+  );
+}
+
+.dashboard-content {
+  padding: 0 4px 24px;
+}
+
+.workspace-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(115deg, #edf4eb 0%, #f3f5ec 60%, #f7efdd 100%);
+}
+
+.hero-resume {
+  position: relative;
+  min-height: 260px;
+}
+
+.hero-paper {
+  position: absolute;
+  top: 0;
+  right: 28px;
+  width: 205px;
+  padding: 23px;
+  border: 1px solid #dce5da;
+  border-radius: 9px;
+  background: #fff;
+  box-shadow: 0 14px 35px #284f3420;
+  transform: rotate(8deg);
+}
+
+.hero-note {
+  position: absolute;
+  right: 0;
+  bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e3e8dc;
+  border-radius: 12px;
+  padding: 12px 16px;
+  background: #fffdf3;
+  color: #365c4c;
+  box-shadow: 0 8px 24px #284f3412;
+  font-size: 12px;
+  transform: rotate(-5deg);
+}
+
+.workspace-cover {
+  background-color: hsl(var(--secondary));
+  background-image: radial-gradient(
+    hsl(var(--primary) / 0.12) 0.7px,
+    transparent 0.7px
+  );
+  background-size: 12px 12px;
+}
+
+.workspace-card:nth-child(3n + 2) .workspace-cover {
+  background-color: #f6f0e5;
+}
+
+.workspace-card:nth-child(3n) .workspace-cover {
+  background-color: #eef1f7;
+}
+
+.app-shell button:focus-visible,
+.dashboard-page input:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 3px;
+}
+
+.dark .workspace-hero {
+  background: linear-gradient(115deg, #17382f, #25362f 60%, #3b3423);
+}
+
+.dark .hero-paper,
+.dark .hero-note {
+  background: hsl(var(--card));
+  border-color: hsl(var(--border));
+  color: hsl(var(--foreground));
+}
+
+.dark .workspace-cover {
+  background-color: hsl(var(--secondary));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workspace-card,
+  .workspace-cover > * {
+    transition: none;
+  }
+}

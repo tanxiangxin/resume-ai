@@ -129,4 +129,4 @@ resume-ai/
 
 ## 项目来源
 
-本项目基于 [zhangzhenxiang666/Chiren](https://github.com/zhangzhenxiang666/Chiren) 进行界面与文档定制，保留原有 Git 历史和后端模块名称。当前仓库维护 Resume AI 的品牌、亮色工作台与使用说明。
+本项目基于 [zhangzhenxiang666/Chiren](https://github.com/zhangzhenxiang666/Chiren) 进行界面与文档定制，保留原有后端模块名称。当前仓库维护 Resume AI 的品牌、亮色工作台与使用说明；原项目的开发历史可在上游仓库查看。

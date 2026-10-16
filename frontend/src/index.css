@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Resume AI · Paper & Sage light theme */
+:root {
+  --border: 145 14% 88%;
+  --input: 145 14% 85%;
+  --ring: 166 63% 30%;
+
+  --background: 75 20% 97%;
+  --foreground: 160 23% 16%;
+  --card: 0 0% 100%;
+  --card-foreground: 160 23% 16%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 160 23% 16%;
+  --primary: 166 63% 30%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 152 27% 93%;
+  --secondary-foreground: 166 63% 25%;
+  --muted: 100 14% 94%;
+  --muted-foreground: 150 7% 43%;
+  --accent: 152 27% 93%;
+  --accent-foreground: 166 63% 25%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+  --success: 142 76% 36%;
+  --success-foreground: 0 0% 100%;
+}
+
+/* ── Shadcn HSL Variables: Dark Mode (synced with workspace-detail-page) ── */
+.dark {
+  --border: 220 14% 22%;
+  --input: 220 14% 24%;
+  --ring: 224 76% 48%;
+
+  --background: 222 28% 10%;
+  --foreground: 210 35% 96%;
+  --card: 222 24% 13%;
+  --card-foreground: 210 35% 96%;
+  --popover: 222 47% 10%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 217 91% 60%;
+  --primary-foreground: 222 47% 11%;
+  --secondary: 217 33% 17%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 221 20% 18%;
+  --muted-foreground: 215 18% 70%;
+  --accent: 220 20% 19%;
+  --accent-foreground: 210 35% 96%;
+  --destructive: 0 63% 31%;
+  --destructive-foreground: 210 40% 98%;
+  --success: 142 76% 46%;
+  --success-foreground: 0 0% 100%;
+}
+
+/* ── Scrollbar ── */
+:root {
+  --scrollbar-thumb: hsl(var(--muted-foreground) / 0.3);
+  --scrollbar-track: hsl(var(--muted));
+  --scrollbar-thumb-hover: hsl(var(--muted-foreground) / 0.5);
+}
+
+.dark {
+  --scrollbar-thumb: hsl(var(--muted-foreground) / 0.3);
+  --scrollbar-track: hsl(var(--muted));
+  --scrollbar-thumb-hover: hsl(var(--muted-foreground) / 0.5);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* ── Global Base (applied to :root = <html>) ── */
+:root {
+  --text: #65746d;
+  --text-h: #20332c;
+  --bg: #f7f8f4;
+  --code-bg: #f1f5f9;
+  --accent-raw: #1c7d66;
+  --accent-bg: rgba(28, 125, 102, 0.1);
+  --accent-border: rgba(28, 125, 102, 0.4);
+  --social-bg: rgba(241, 245, 249, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.08) 0 10px 15px -3px, rgba(0, 0, 0, 0.04) 0 4px 6px -2px;
+
+  --sans: "Inter", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --heading: "Inter", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 16px/150% var(--sans);
+  letter-spacing: 0;
+  color-scheme: light;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+.dark {
+  --text: #94a3b8;
+  --text-h: #f1f5f9;
+  --bg: #0b1120;
+  --code-bg: #1e293b;
+  --accent-raw: #f472b6;
+  --accent-bg: rgba(244, 114, 182, 0.15);
+  --accent-border: rgba(244, 114, 182, 0.5);
+  --social-bg: rgba(30, 41, 59, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.5) 0 10px 15px -3px, rgba(0, 0, 0, 0.3) 0 4px 6px -2px;
+}
+
+#social .button-icon {
+  filter: invert(1) brightness(2);
+}
+
+/* react-vertical-timeline-component compact overrides */
+.compact-timeline {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.compact-timeline::before {
+  left: 5px !important;
+  width: 2px !important;
+  background: hsl(var(--border)) !important;
+}
+.compact-timeline .vertical-timeline-element {
+  margin: 0 0 10px 0 !important;
+}
+.compact-timeline .vertical-timeline-element:last-child {
+  margin-bottom: 0 !important;
+}
+.compact-timeline .vertical-timeline-element-icon {
+  left: 0 !important;
+  top: 0 !important;
+  width: 12px !important;
+  height: 12px !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+}
+.compact-timeline .vertical-timeline-element-icon svg {
+  position: static !important;
+  left: auto !important;
+  top: auto !important;
+  margin: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  display: block !important;
+}
+.compact-timeline .vertical-timeline-element-content {
+  margin-left: 18px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+.compact-timeline .vertical-timeline-element-content-arrow {
+  display: none !important;
+}
+.compact-timeline .vertical-timeline-element-content p {
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  margin: 0 !important;
+  line-height: inherit !important;
+  color: inherit !important;
+}
+.compact-timeline .vertical-timeline-element-content h2 {
+  color: inherit !important;
+  font-size: inherit !important;
+}
+.compact-timeline .vertical-timeline-element-date {
+  font-size: inherit !important;
+  font-weight: inherit !important;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  text-align: left;
+  border: none;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+
